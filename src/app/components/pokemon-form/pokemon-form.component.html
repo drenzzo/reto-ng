@@ -1,0 +1,46 @@
+{{ display }}
+<div [ngStyle]="{'display': display}">
+
+  <h3 class="text-center">Nuevo Pokemon</h3>
+  <form>
+    <div class="row clearfix">
+      <div class="col-1-2">
+        <div class="form-group row">
+          <span class="label f-l">Nombre:</span>
+          <input type="text" name="name" [(ngModel)]="pokemon.name" id="" required>
+        </div>
+        <div class="form-group row">
+          <span class="label f-l">Imagen:</span>
+          <input type="url" name="image" [(ngModel)]="pokemon.image" id="" placeholder="url">
+        </div>
+      </div>
+
+      <div class="col-1-2">
+        <div class="form-group row">
+          <span class="label f-l">Ataque:</span>
+          <input type="range" name="attack" [(ngModel)]="pokemon.attack" id="" min="0" max="100">
+        </div>
+        <div class="form-group row">
+          <span class="label f-l">Defensa:</span>
+          <input type="range" name="defense" [(ngModel)]="pokemon.defense" id="" min="0" max="100">
+        </div>
+      </div>
+    </div>
+
+    <div class="row clearfix">
+      <div class="form-group text-center mt-30">
+        <button class="btn btn-save" (click)="savePokemon()">
+          <i class="ico-floppy"></i>
+          Guardar
+        </button>
+        &nbsp;&nbsp;
+        <button class="btn btn-cancel" >
+          <i class="ico-cancel" (click)="cancel()"></i>
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+

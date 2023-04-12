@@ -1,0 +1,40 @@
+<div class="mt-30">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th>id</th>
+      <th>Nombre</th>
+      <th>Imagen</th>
+      <th>Ataque</th>
+      <th>Defensa</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let item of pokemons">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td class="text-center">
+        <a [href]="item.image" class="ico-img" target="_blank">
+          <img src="../../../assets/img/ico-img.png" alt="ico-img">
+        </a>
+      </td>
+      <td>{{ item.attack }}</td>
+      <td>{{ item.defense }}</td>
+      <td class="text-center">
+        <button class="btn-action" (click)="updatePokemon(item)">
+          <i class="ico-edit"></i>
+        </button>&nbsp;&nbsp;
+        <button class="btn-action" (click)="deletePokemon(item.id)">
+          <i class="ico-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<div>
+  <app-pokemon-form
+    [display] = "display"
+    [pokemon] = "pokemon"
+    (newPokemon)="addNewPokemon($event)"
+  ></app-pokemon-form>
+</div>

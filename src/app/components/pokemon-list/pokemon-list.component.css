@@ -1,0 +1,19 @@
+.ico-img{
+  text-align: center;
+  text-decoration: none;
+  color: #ccc;
+}
+
+.btn-action{
+  border: solid 1ps #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+i.ico-trash::after{
+  content: url('../../../assets/img/ico-trash.png');
+}
+
+i.ico-edit::after{
+  content: url('../../../assets/img/ico-edit.png');
+}

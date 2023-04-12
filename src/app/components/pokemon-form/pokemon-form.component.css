@@ -1,0 +1,14 @@
+i.ico-floppy::after{
+  content: url('../../../assets/img/ico-floppy.png');
+  filter: invert(1);
+}
+
+i.ico-cancel::after{
+  content: url('../../../assets/img/ico-cancel.png');
+  filter: invert(1);
+}
+
+.btn-cancel,
+.btn-save{
+  cursor: pointer;
+}
