@@ -1,15 +1,21 @@
-<div class="mt-30">
+<div class="row clearfix">
+  <h4>Listado de Pokemones</h4>
+  <input type="search" class="search f-l" [(ngModel)]="filter" placeholder="Buscar">
+  <button class="btn btn-new f-r" (click)="openForm()">
+    <i class="ico-plus"></i>
+    Nuevo
+  </button>
+</div>
+<div class="row mt-30 ox-table">
   <table border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <th>id</th>
       <th>Nombre</th>
       <th>Imagen</th>
       <th>Ataque</th>
       <th>Defensa</th>
       <th>Acciones</th>
     </tr>
-    <tr *ngFor="let item of pokemons">
-      <td>{{ item.id }}</td>
+    <tr *ngFor="let item of pokemons | pokemon:filter">
       <td>{{ item.name }}</td>
       <td class="text-center">
         <a [href]="item.image" class="ico-img" target="_blank">
@@ -31,10 +37,10 @@
 </div>
 
 
-<div>
+<div class="row newform" [ngStyle]="{'display': display}">
   <app-pokemon-form
-    [display] = "display"
     [pokemon] = "pokemon"
     (newPokemon)="addNewPokemon($event)"
+    (display) = "closeForm()"
   ></app-pokemon-form>
 </div>

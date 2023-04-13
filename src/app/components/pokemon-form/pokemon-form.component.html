@@ -1,28 +1,25 @@
-{{ display }}
-<div [ngStyle]="{'display': display}">
-
-  <h3 class="text-center">Nuevo Pokemon</h3>
+  <h4 class="text-center mb-30">Nuevo Pokemon</h4>
   <form>
     <div class="row clearfix">
-      <div class="col-1-2">
-        <div class="form-group row">
+      <div class="col-1-2 mb-30">
+        <div class="form-group mb-30">
           <span class="label f-l">Nombre:</span>
-          <input type="text" name="name" [(ngModel)]="pokemon.name" id="" required>
+          <input class="form-input-name" type="text" name="name" [(ngModel)]="pokemon.name" id="" required>
         </div>
-        <div class="form-group row">
+        <div class="form-group">
           <span class="label f-l">Imagen:</span>
-          <input type="url" name="image" [(ngModel)]="pokemon.image" id="" placeholder="url">
+          <input class="form-input-image" type="url" name="image" [(ngModel)]="pokemon.image" id="" placeholder="url">
         </div>
       </div>
 
       <div class="col-1-2">
-        <div class="form-group row">
+        <div class="form-group mb-30">
           <span class="label f-l">Ataque:</span>
-          <input type="range" name="attack" [(ngModel)]="pokemon.attack" id="" min="0" max="100">
+          <input class="form-input-attack" type="range" name="attack" [(ngModel)]="pokemon.attack" id="" min="0" max="100">
         </div>
-        <div class="form-group row">
+        <div class="form-group">
           <span class="label f-l">Defensa:</span>
-          <input type="range" name="defense" [(ngModel)]="pokemon.defense" id="" min="0" max="100">
+          <input class="form-input-defense" type="range" name="defense" [(ngModel)]="pokemon.defense" id="" min="0" max="100">
         </div>
       </div>
     </div>
@@ -34,13 +31,12 @@
           Guardar
         </button>
         &nbsp;&nbsp;
-        <button class="btn btn-cancel" >
-          <i class="ico-cancel" (click)="cancel()"></i>
+        <button class="btn btn-cancel" (click)="cancel()">
+          <i class="ico-cancel"></i>
           Cancelar
         </button>
       </div>
     </div>
   </form>
-</div>
 
 

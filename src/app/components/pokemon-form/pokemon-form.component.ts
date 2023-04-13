@@ -10,6 +10,7 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
 export class PokemonFormComponent {
 
   @Output() newPokemon: EventEmitter<Pokemon> = new EventEmitter();
+  @Output() display: EventEmitter<string> = new EventEmitter();
 
   @Input() pokemon: Pokemon = {
     id: 0,
@@ -21,8 +22,6 @@ export class PokemonFormComponent {
     type: 'Electrico',
     idAuthor: 1
   };
-
-  @Input() display:string = 'none';
 
   constructor(private pokemonsService: PokemonsService) {}
 
@@ -40,23 +39,25 @@ export class PokemonFormComponent {
   }
 
   savePokemon() {
-    if(this.pokemon.id === 0){
+    if(this.pokemon.id == 0){
       this.pokemonsService.savePokemon(this.pokemon)
       .subscribe(
         res => console.log(res)
       );
       this.newPokemon.emit(this.pokemon);
-    }
-    this.pokemonsService.updatePokemon(this.pokemon.id, this.pokemon)
+    } else {
+      this.pokemonsService.updatePokemon(this.pokemon.id, this.pokemon)
       .subscribe(
         res => console.log(res)
       );
+    }
     this.clearPokemon();
   }
 
-  cancel(){
+  cancel() {
+    this.display.emit();
     this.clearPokemon();
-    this.display = 'none';
   }
+
 
 }

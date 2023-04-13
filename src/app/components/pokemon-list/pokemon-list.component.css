@@ -1,3 +1,18 @@
+i.ico-plus::after{
+  content: url('../../../assets/img/ico-plus.png');
+  filter: invert(1);
+}
+
+.search{
+  padding-left: 30px;
+  background: url('../../../assets/img/ico-search.png') 10px center no-repeat;
+}
+
+.btn-new{
+  cursor: pointer;
+}
+
+
 .ico-img{
   text-align: center;
   text-decoration: none;
@@ -16,4 +31,9 @@ i.ico-trash::after{
 
 i.ico-edit::after{
   content: url('../../../assets/img/ico-edit.png');
+}
+
+.newform{
+  border: solid 1px #ccc;
+  padding: 30px;
 }

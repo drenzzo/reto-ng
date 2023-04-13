@@ -8,6 +8,13 @@ i.ico-cancel::after{
   filter: invert(1);
 }
 
+.form-input-name,
+.form-input-image,
+.form-input-attack,
+.form-input-defense{
+  width: 175px;
+}
+
 .btn-cancel,
 .btn-save{
   cursor: pointer;

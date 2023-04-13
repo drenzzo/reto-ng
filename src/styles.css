@@ -60,7 +60,6 @@ input {
 
 table {
   margin: 30px auto;
-  overflow-x: auto;
 }
 
 th {
@@ -72,6 +71,10 @@ th, td {
   border: solid 1px #ccc;
   margin: 0;
   padding: 8px;
+}
+
+.ox-table{
+  overflow-x: auto;
 }
 
 .text-center{
@@ -91,6 +94,10 @@ th, td {
 
 .mt-30{
   margin-top: 30px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
 }
 
 .label{
@@ -124,6 +131,10 @@ th, td {
     overflow-x: none;
   }
 
+  .ox-table{
+    overflow-x: none;
+  }
+
   .col-2-3 {
     float: left;
     width: 66.66%;
@@ -146,3 +157,22 @@ th, td {
   }
 
 }
+
+@media ( min-width: 600px ) and ( max-width:1365px ) {
+
+  .wrapper {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+}
+
+@media( min-width: 1366px ) {
+
+  .wrapper {
+    width: 55%;
+    margin: 0 auto;
+  }
+
+}
+

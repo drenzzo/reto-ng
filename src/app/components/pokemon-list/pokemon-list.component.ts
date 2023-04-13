@@ -10,7 +10,8 @@ import { Pokemon } from '../../models/Pokemon'
 })
 export class PokemonListComponent implements OnInit {
 
-  @Input() display:string = 'none';
+  filter: string = '';
+  display: string = 'none'
 
   pokemons: Pokemon[] = [];
   pokemon: Pokemon ={
@@ -52,6 +53,14 @@ export class PokemonListComponent implements OnInit {
           this.getPokemons();
         }
       )
+  }
+
+  openForm() {
+    this.display = 'block';
+  }
+
+  closeForm() {
+    this.display = 'none';
   }
 
 }
