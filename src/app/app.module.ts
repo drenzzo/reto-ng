@@ -5,18 +5,18 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
+
 import { PokemonFormComponent } from './components/pokemon-form/pokemon-form.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 
-import { PokemonsService } from './services/pokemons.service';
+import { PokemonPipe } from './pokemon.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
     PokemonFormComponent,
-    PokemonListComponent
+    PokemonListComponent,
+    PokemonPipe
   ],
   imports: [
     BrowserModule,
